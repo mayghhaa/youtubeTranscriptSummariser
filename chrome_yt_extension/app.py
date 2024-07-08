@@ -18,10 +18,15 @@ prompt_templates = {
 }
 
 @app.route('/summary', methods=['GET'])
+
 def summary_api():
     url = request.args.get('url', '')
+    
     length = request.args.get('length', '')
+    
     video_id = url.split('v=')[1] if 'v=' in url else None
+
+    
     if not video_id:
         return "Invalid YouTube URL.", 400
     try:
@@ -31,6 +36,8 @@ def summary_api():
     except Exception as e:
         return str(e), 500
 
+
+    
     if length not in prompt_templates:
         return jsonify(error="Invalid summary length. Choose 'short', 'medium', or 'long'."), 400
 
@@ -47,7 +54,9 @@ def get_transcript(video_id):
 def get_summary(transcript, prompt):
     try:
         model = genai.GenerativeModel("gemini-pro")
+        
         response = model.generate_content(prompt + transcript)
+        
         return response.text
     except Exception as e:
         raise e
