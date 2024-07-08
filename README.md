@@ -52,9 +52,8 @@ The YouTube Transcript Summariser is a Chrome extension that extracts transcript
 
 2. Open your Web Browser. Click on the three dots in the right hand corner. Select Extensions-> Manage extensions from the menu. Select developer mode in right hand corner of the web page that appears. Select Load Unpacked and choose the files from the location they were cloned into.  
 
-4. To get a summary: play video and use the extensio from the browser.
-   //127.0.0.1:5000/summary?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ&length=medium
-    ```
+4. To get a summary: play video and use the extension from the browser.
+   
 
 ## Error Handling
 
