@@ -1,4 +1,4 @@
-# YouTube Transcript Summariser
+# Chrome Extension: YouTube Transcript Summariser
 
 ## Overview
 
