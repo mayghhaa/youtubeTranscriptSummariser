@@ -24,8 +24,8 @@ btn.addEventListener("click", function() {
             return;
         }
 
-        console.log(`URL in popup: ${url}`);  // Debug statement
-        console.log(`Video ID in popup: ${videoId}`);  // Debug statement
+        // console.log(`URL in popup: ${url}`);  // Debug statement
+        // console.log(`Video ID in popup: ${videoId}`);  // Debug statement
 
         //  URL and video ID
         const urlDisplay = document.getElementById("url");
@@ -36,20 +36,20 @@ btn.addEventListener("click", function() {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", `http://127.0.0.1:5000/summary?url=${url}&length=${summaryLength}`, true);
         xhr.onload = function() {
-            console.log(`Response status: ${xhr.status}`);  // Debug statement
+            // console.log(`Response status: ${xhr.status}`);  // Debug statement
             if (xhr.status === 200) {
                 var text = xhr.responseText;
                 const p = document.getElementById("output");
                 p.innerHTML = text;
             } else {
-                console.error(`Error in response: ${xhr.responseText}`);  // Debug statement
+                // console.error(`Error in response: ${xhr.responseText}`);  // Debug statement
                 errorDisplay.innerHTML = "Error: Unable to retrieve summary. " + xhr.responseText;
             }
             btn.disabled = false;
             btn.innerHTML = "Summarise";
         };
         xhr.onerror = function() {
-            console.error(`Network error`);  // Debug statement
+            // console.error(`Network error`);  // Debug statement
             errorDisplay.innerHTML = "Error: Network error.";
             btn.disabled = false;
             btn.innerHTML = "Summarise";
