@@ -35,7 +35,7 @@ The YouTube Transcript Summariser is a Chrome extension that extracts transcript
 
 3. Install the required dependencies:
     ```
-    pip install -r requirements.txt
+    pip install -r req.txt
     ```
 
 4. Create a `.env` file in the project root and add your Google API key:
